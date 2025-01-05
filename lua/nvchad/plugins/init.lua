@@ -165,15 +165,12 @@ return {
     opts = function()
       return require "nvchad.configs.noice"
     end,
-    config = function()
-      require("noice").setup(opts)
-    end
   },
 
   {
     "rcarriga/nvim-notify",
     event = "VeryLazy"
-    
+
   },
 
   "MunifTanjim/nui.nvim",
