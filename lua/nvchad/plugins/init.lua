@@ -17,7 +17,9 @@ return {
   },
 
   "nvzone/volt",
+
   "nvzone/menu",
+
   { "nvzone/minty", cmd = { "Huefy", "Shades" } },
 
   {
@@ -46,7 +48,6 @@ return {
     end,
   },
 
-  -- file managing , picker etc
   {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
@@ -65,7 +66,6 @@ return {
     end,
   },
 
-  -- formatting!
   {
     "stevearc/conform.nvim",
     opts = {
@@ -73,7 +73,6 @@ return {
     },
   },
 
-  -- git stuff
   {
     "lewis6991/gitsigns.nvim",
     event = "User FilePost",
@@ -82,7 +81,6 @@ return {
     end,
   },
 
-  -- lsp stuff
   {
     "williamboman/mason.nvim",
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
@@ -99,13 +97,11 @@ return {
     end,
   },
 
-  -- load luasnips + cmp related in insert mode only
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
       {
-        -- snippet plugin
         "L3MON4D3/LuaSnip",
         dependencies = "rafamadriz/friendly-snippets",
         opts = { history = true, updateevents = "TextChanged,TextChangedI" },
@@ -115,7 +111,6 @@ return {
         end,
       },
 
-      -- autopairing of (){}[] etc
       {
         "windwp/nvim-autopairs",
         opts = {
@@ -124,14 +119,11 @@ return {
         },
         config = function(_, opts)
           require("nvim-autopairs").setup(opts)
-
-          -- setup cmp for autopairs
           local cmp_autopairs = require "nvim-autopairs.completion.cmp"
           require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
         end,
       },
 
-      -- cmp sources plugins
       {
         "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-nvim-lua",
@@ -166,4 +158,27 @@ return {
       require("nvim-treesitter.configs").setup(opts)
     end,
   },
+
+  {
+		"folke/noice.nvim",
+    event = "VeryLazy",
+		config = function()
+			require("noice").setup()
+		end
+	},
+
+	{
+    "rcarriga/nvim-notify",
+    event = "VeryLazy"
+    
+  },
+
+  "MunifTanjim/nui.nvim",
+
+  {
+    "folke/snacks.nvim",
+    opts = function()
+      return require "nvchad.configs.snacks"
+    end,
+  }
 }

@@ -1,6 +1,7 @@
 local opt = vim.opt
 local o = vim.o
 local g = vim.g
+local wo = vim.wo
 
 -------------------------------------- options ------------------------------------------
 o.laststatus = 3
@@ -26,6 +27,8 @@ o.mouse = "a"
 o.number = true
 o.numberwidth = 2
 o.ruler = false
+wo.number = true
+wo.relativenumber = true
 
 -- disable nvim intro
 opt.shortmess:append "sI"
@@ -35,6 +38,9 @@ o.splitbelow = true
 o.splitright = true
 o.timeoutlen = 400
 o.undofile = true
+
+-- wrap
+opt.wrap = false
 
 -- interval for writing swap file to disk, also used by gitsigns
 o.updatetime = 250
