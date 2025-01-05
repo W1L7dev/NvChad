@@ -166,7 +166,7 @@ return {
       require("noice").setup()
     end,
     opts = function()
-      return require "nvchad.config.noice"
+      return require "nvchad.configs.noice"
     end
   },
 
