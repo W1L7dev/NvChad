@@ -160,14 +160,17 @@ return {
   },
 
   {
-		"folke/noice.nvim",
+    "folke/noice.nvim",
     event = "VeryLazy",
-		config = function()
-			require("noice").setup()
-		end
-	},
+    config = function()
+      require("noice").setup()
+    end,
+    opts = function()
+      return require "nvchad.config.noice"
+    end
+  },
 
-	{
+  {
     "rcarriga/nvim-notify",
     event = "VeryLazy"
     
