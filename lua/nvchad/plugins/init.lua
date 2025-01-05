@@ -162,11 +162,11 @@ return {
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    config = function()
-      require("noice").setup()
-    end,
     opts = function()
       return require "nvchad.configs.noice"
+    end,
+    config = function()
+      require("noice").setup(opts)
     end
   },
 
