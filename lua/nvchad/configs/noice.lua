@@ -27,7 +27,7 @@ return {
       padding = { 2, 3 },
     },
     win_options = {
-      winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder"
+      winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" }
     },
   },
 }
