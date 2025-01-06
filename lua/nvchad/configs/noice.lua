@@ -1,5 +1,3 @@
-dofile(vim.g.base46_cache .. "noice")
-
 return {
   background_colour = "NotifyBackground",
   views = {
