@@ -12,4 +12,22 @@ return {
       },
     },
   },
+  popupmenu = {
+    relative = "editor",
+    position = {
+      row = 8,
+      col = "50%",
+    },
+    size = {
+      width = 60,
+      height = 10,
+    },
+    border = {
+      style = "none",
+      padding = { 2, 3 },
+    },
+    win_options = {
+      winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder"
+    },
+  },
 }
